@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  database:
+    image: "postgres:11.3"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: productsdb
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    container_name: products_pg
